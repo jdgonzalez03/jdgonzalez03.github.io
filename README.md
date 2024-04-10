@@ -20,7 +20,7 @@ This is my personal portfolio, where I showcase a selection of my projects and s
 
 ## Getting Started
 
-There are no additional steps required to view the website. Simply visit [animalplay.github.io](https://animalplay.github.io) in your web browser.
+There are no additional steps required to view the website. Simply visit [jdgonzalez03.github.io](https://jdgonzalez03.github.io) in your web browser.
 
 ## Usage
 
