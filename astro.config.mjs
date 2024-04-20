@@ -10,5 +10,4 @@ export default defineConfig({
   integrations: [tailwind(), icon(), compress()],
   output: "server",
   adapter: vercel(),
-  site: "https://jdgonzalez03.github.io",
 });
