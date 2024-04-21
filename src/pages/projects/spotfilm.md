@@ -1,8 +1,12 @@
 ---
-title: DataAir
-url: http://dan.ma/humbe
-tags: ["react", "javaScript", "axios", "HTML", "SCSS", "CSS"]
+title: My GitHub repositories 
+url: https://github.com/jdgonzalez03
+tags: ["react", "javaScript", "axios", "HTML", "SCSS", "CSS", "express"]
 date: 2022
 ---
+My GitHub repositories showcase my journey through various languages and frameworks, such as ReactJS, JavaScript, HTML, and CSS. Some of my principal repositories include:
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+- Learning ReactJS
+- Learning HTML-CSS
+- Learning JavaScript
+- OpenFullStack (My progress from Helsinki's Bootcamp)"
