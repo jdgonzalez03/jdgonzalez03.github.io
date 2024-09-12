@@ -1,10 +1,10 @@
 ---
-title: No working
+title: Freelance Developer
 date: Present
 url: https://github.com/jdgonzalez03
 location: N/A
 org: N/A
-tags: ["FrontEnd", "BackEnd", "Learning ReacJS", "CSS", "HTML", "JavaScript", "NodeJS"]
+tags: ["FrontEnd", "BackEnd", "VueJS", "CSS", "HTML", "JavaScript", "NodeJS"]
 ---
 
-While I'm not currently employed, I've dedicated significant time to honing my coding skills every day. My GitHub repositories serve as a visual representation of my progress, documenting my journey through various languages and frameworks such as ReactJS, ExpressJs, NodeJS, JavaScript, HTML, and CSS
+I have worked on different personal projects to improve my programming skills. I focus mainly on Vue.js, but I also have experience with React.js, Arduino, and Python. I have built several small applications to practice what I learn and get hands-on experience in frontend development and working with hardware. Although I am not currently working, I spend a lot of time every day improving my coding skills. My GitHub shows my progress.
