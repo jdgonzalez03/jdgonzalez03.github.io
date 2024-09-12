@@ -7,4 +7,6 @@ pronouns: "he/him/el"
 website: "http://tafutza.hn/kos"
 ---
 
-As an electronic engineering student with a fervent passion for programming, I am driven by a dual interest in innovation and problem-solving. My journey intertwines the complexities of electronic systems with the dynamic realm of software development. Currently, I am learning to use frameworks like ReactJS in frontend and Express.js in backend to design innovative and scalable solutions. Proficient in HTML, CSS, and JavaScript, I craft experiences on the frontend, leveraging these tools to bring creative ideas to life. With a strong foundation in digital electronics and a knack for algorithmic thinking, I thrive in creating holistic solutions that seamlessly integrate hardware and software. Beyond the screen, I am a dedicated sports enthusiast and an avid builder, finding inspiration at the intersection of physical and digital creation.
+I am an electronic engineering student with a strong passion for programming, especially with Vue.js. I enjoy learning new things and solving problems, both in electronics and software. Currently, I am learning to use frameworks like VueJS for the frontend and Express.js for the backend, to create efficient and scalable web applications. I have good skills in HTML, CSS, and JavaScript, and I use them to build responsive and user-friendly websites.
+
+With a solid understanding of digital electronics, I like to combine hardware and software to create complete solutions. Outside of coding, I love running and always look for ways to keep learning and improving
