@@ -1,5 +1,5 @@
 ---
-title: Curso de VueJS: Componentes y Composition API
+title: Curso de VueJS - Componentes y Composition API
 org: Platzi
 tags: [Vue.js, Front-End, Composition API]
 url: https://drive.google.com/file/d/1MVWCYl5J4lszi3odMJ2f3NwkNmU6pwP3/view?usp=sharing
