@@ -1,9 +1,10 @@
 ---
 import "../styles/global.css";
+import Header from "../components/Header.astro";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-full">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -15,16 +16,10 @@ import "../styles/global.css";
 		<meta name="keywords" content="blog, astro, juan gonzalez, portfolio, web developer" />
 		<title>Juan Gonzalez - Web Developer</title>
 	</head>
-	<body>
-		<slot />
+	<body class="min-h-full bg-dracula-background text-dracula-foreground antialiased p-4">
+		<Header />
+		<main class="container mx-auto px-4 py-8">
+			<slot />
+		</main>
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
