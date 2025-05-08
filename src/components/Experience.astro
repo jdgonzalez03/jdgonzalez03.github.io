@@ -1,0 +1,47 @@
+---
+import IconTimeLine from "./icons/IconTimeLine.astro";
+
+const experience = [
+  {
+    title: "HelixSoftware S.A.S",
+    date: "Desde Noviembre 2024",
+    description:
+      "Desarrollo de una aplicación web para la gestión de clases en una academia de inglés ubicada en Villavicencio, Meta, Colombia. El sistema ha sido implementado utilizando tecnologías como VueJS, Bootstrap, Django y Docker. Además, cuenta con integración de pasarelas de pago como ePayco e incorpora inteligencia artificial para la transcripción automática entre español e inglés, y viceversa.",
+    link: "https://helixsoft.com.co/",
+    current: true,
+  },
+];
+---
+
+<ol class="ml-3.5 relative border-s border-gray-200 dark:border-gray-700">
+  {
+    experience.map(({ title, date, description, link, current }) => (
+      <li class="mb-10 ms-6">
+        <IconTimeLine />
+        <h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+          {title}
+          {current && (
+            <span class="text-sm font-bold me-2 px-2.5 py-0.5 rounded-sm bg-dracula-purple/70 text-dracula-background ms-3">
+              Actualmente
+            </span>
+          )}
+        </h3>
+        <time class="block mb-2 text-sm font-normal leading-none text-dracula-orange">
+          {date}
+        </time>
+        <p class="mb-4 text-base font-normal text-dracula-foreground/70">
+          {description}
+        </p>
+        {link && (
+          <a
+            href={link}
+            target="_blank"
+            class="inline-flex items-center px-4 py-2 text-sm rounded-md bg-dracula-comment/20 border border-dracula-comment text-dracula-comment hover:bg-dracula-comment/30 hover:text-dracula-purple hover:border-dracula-purple hover:scale-105 transition-all duration-300"
+          >
+            Saber más
+          </a>
+        )}
+      </li>
+    ))
+  }
+</ol>
