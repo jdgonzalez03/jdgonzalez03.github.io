@@ -1,48 +1,81 @@
-# Astro Starter Kit: Basics
+# Portfolio Personal - Juan Gonzalez
 
-```sh
-npm create astro@latest -- --template basics
+![Portfolio Preview](/public/preview.png)
+
+## 🚀 Sobre el Proyecto
+
+Este es mi portfolio personal, un espacio donde muestro mi trabajo, experiencia y proyectos como desarrollador web. El sitio está construido con Astro, aprovechando su rendimiento y flexibilidad para crear una experiencia web moderna y atractiva.
+
+## ✨ Características
+
+- 🎨 Diseño moderno inspirado en el tema Dracula
+- 📱 Totalmente responsive
+- ⚡ Rendimiento optimizado con Astro
+- 🎯 Navegación suave y animaciones sutiles
+- 🌙 Tema oscuro por defecto
+- 🔍 SEO optimizado
+
+## 🛠️ Tecnologías Utilizadas
+
+- [Astro](https://astro.build) - Framework web para contenido estático
+- [TailwindCSS](https://tailwindcss.com) - Framework CSS utility-first
+- [TypeScript](https://www.typescriptlang.org) - Superset tipado de JavaScript
+- [Vercel](https://vercel.com) - Plataforma de despliegue
+
+## 🏗️ Estructura del Proyecto
+
 ```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
+portfolio/
+├── public/          # Archivos estáticos
 ├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
+│   ├── components/  # Componentes reutilizables
+│   ├── layouts/     # Layouts de la aplicación
+│   ├── pages/       # Páginas de la aplicación
+│   └── styles/      # Estilos globales
 └── package.json
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## 🚀 Desarrollo Local
 
-## 🧞 Commands
+1. Clona el repositorio:
+```bash
+git clone https://github.com/tu-usuario/portfolio.git
+```
 
-All commands are run from the root of the project, from a terminal:
+2. Instala las dependencias:
+```bash
+npm install
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+3. Inicia el servidor de desarrollo:
+```bash
+npm run dev
+```
 
-## 👀 Want to learn more?
+4. Abre [http://localhost:4321](http://localhost:4321) en tu navegador.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## 📦 Construcción
+
+Para construir el proyecto para producción:
+
+```bash
+npm run build
+```
+
+## 🚀 Despliegue
+
+El sitio está desplegado en Vercel. Cada push a la rama principal automáticamente despliega los cambios.
+
+## 📝 Licencia
+
+Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
+
+## 📫 Contacto
+
+- Email: juandavidgonzalezurrego@gmail.com
+- LinkedIn: [Tu perfil de LinkedIn]
+- GitHub: [Tu perfil de GitHub]
+
+---
+
+Hecho con ❤️ por Juan Gonzalez
