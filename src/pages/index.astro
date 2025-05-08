@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import SectionContainer from '../components/SectionContainer.astro';
 import Experience from '../components/Experience.astro';
+import Projects from '../components/Projects.astro';
+
 import BriefCase from '../components/icons/BriefCase.astro';
 ---
 
@@ -11,12 +13,19 @@ import BriefCase from '../components/icons/BriefCase.astro';
     <SectionContainer id="hero">
       <Hero />
     </SectionContainer>
-    <SectionContainer id="experience" class="mt-10">
+    <SectionContainer id="experiencia" class="mt-10">
       <h2 class="flex items-center gap-2 font-bold text-2xl text-dracula-purple mb-7">
         <BriefCase />
         Experiencia
       </h2>
       <Experience />
+    </SectionContainer>
+    <SectionContainer id="proyectos" class="mt-5">
+      <h2 class="flex items-center gap-2 font-bold text-2xl text-dracula-purple mb-7">
+        <BriefCase />
+        Proyectos
+      </h2>
+      <Projects />
     </SectionContainer>
   </main>
 </Layout>
