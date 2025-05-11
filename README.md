@@ -73,8 +73,6 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 ## 📫 Contacto
 
 - Email: juandavidgonzalezurrego@gmail.com
-- LinkedIn: [Tu perfil de LinkedIn]
-- GitHub: [Tu perfil de GitHub]
 
 ---
 
