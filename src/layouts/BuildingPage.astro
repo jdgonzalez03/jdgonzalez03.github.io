@@ -1,0 +1,23 @@
+---
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="es" class="h-full">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image" href="/public/me.webp" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="author" content="Juan Gonzalez" />
+		<meta name="title" content="Juan Gonzalez - Desarrollador Web" />
+		<meta name="description" content="Este es mi sitio web personal, donde comparto mis pensamientos y proyectos. Soy un desarrollador web apasionado por construir sitios web hermosos y funcionales." />
+		<meta name="keywords" content="blog, astro, juan gonzalez, portfolio, web developer" />
+		<title>Juan Gonzalez - Desarrollador Web</title>
+	</head>
+	<body class="min-h-full bg-dracula-background text-dracula-foreground antialiased pt-4 flex items-center">
+		<main class="container mx-auto px-4 py-8">
+			<slot />
+		</main>
+	</body>
+</html>
