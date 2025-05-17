@@ -12,24 +12,24 @@ import UserIcon from '../components/icons/User.astro';
 
 <Layout>
   <main class="flex flex-col items-center justify-center mt-20">
-    <SectionContainer id="hero">
+    <SectionContainer id="hero" class="section-animate">
       <Hero />
     </SectionContainer>
-    <SectionContainer id="experiencia" class="mt-10">
+    <SectionContainer id="experiencia" class="mt-10 section-animate">
       <h2 class="flex items-center gap-2 font-bold text-2xl text-dracula-purple mb-7">
         <BriefCase />
         Experiencia
       </h2>
       <Experience />
     </SectionContainer>
-    <SectionContainer id="proyectos" class="mt-5">
+    <SectionContainer id="proyectos" class="mt-5 section-animate">
       <h2 class="flex items-center gap-2 font-bold text-2xl text-dracula-purple mb-7">
         <BriefCase />
         Proyectos
       </h2>
       <Projects />
     </SectionContainer>
-    <SectionContainer id="sobre-mi" class="mt-5">
+    <SectionContainer id="sobre-mi" class="mt-5 section-animate">
       <h2 class="flex items-center gap-2 font-bold text-2xl text-dracula-purple mb-5">
         <UserIcon />
         Sobre mí
