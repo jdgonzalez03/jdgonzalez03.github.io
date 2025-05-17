@@ -1,0 +1,22 @@
+---
+import Code from "../components/icons/Code.astro";
+
+interface Props {
+  message?: string;
+}
+
+const { message = "Página en construcción" } = Astro.props;
+---
+
+<div class="flex flex-col items-center justify-center h-full p-8 text-center bg-dracula-background">
+  <div class="p-8 rounded-lg bg-dracula-current-line">
+    <div class="animate-pulse mb-4">
+      <Code class="text-dracula-cyan text-center mx-auto size-16" />
+    </div>
+    <h2 class="text-2xl font-bold text-dracula-foreground mb-4">{message}</h2>
+    <p class="text-dracula-green mb-3">
+      Esta página está en proceso de desarrollo. ¡Vuelve pronto para ver los cambios!
+    </p>
+    <img src="/src/assets/cat-type.gif" alt="Cat typing" class="w-1/2 mx-auto border border-dracula-current-line rounded-lg" />
+  </div>
+</div>
