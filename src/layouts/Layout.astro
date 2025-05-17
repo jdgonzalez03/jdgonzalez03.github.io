@@ -44,8 +44,13 @@ import Footer from "../components/Footer.astro";
 				y: 40,
 				opacity: 0,
 				duration: 1,
-				delay: 0.2 + i * 0.2,
-				ease: "power3.out"
+				ease: "power3.out",
+				scrollTrigger: {
+					trigger: el as HTMLElement,
+					start: "top 80%", // cuando el top de la sección llega al 80% del viewport
+					toggleActions: "play none none none", // solo anima al entrar
+					// markers: true, // descomenta para depurar
+				}
 				});
 			});
 
