@@ -1,0 +1,152 @@
+---
+const certificates = [
+  {
+    title: "Legacy JavaScript Algorithms and Data Structures",
+    date: "Mayo, 2023",
+    description:
+      "Certificación de FreeCodeCamp que valida mis conocimientos en algoritmos y estructuras de datos utilizando JavaScript.",
+    link: "https://www.freecodecamp.org/certification/juang_/javascript-algorithms-and-data-structures",
+    entity: "FreeCodeCamp",
+  },
+  {
+    title: "Responsive Web Design",
+    date: "Mayo, 2023",
+    description:
+      "Certificación de FreeCodeCamp que acredita mis habilidades en diseño web responsivo con HTML y CSS.",
+    link: "https://www.freecodecamp.org/certification/juang_/responsive-web-design",
+    entity: "FreeCodeCamp",
+  },
+  {
+    title: "Front-end Development Libraries",
+    date: "Septiembre, 2024",
+    description:
+      "Certificación de FreeCodeCamp que valida mi conocimiento en librerías front-end como React, Bootstrap, jQuery y Sass.",
+    link: "https://www.freecodecamp.org/certification/juang_/front-end-development-libraries",
+    entity: "FreeCodeCamp",
+  },
+  {
+    title: "Front-end Developer",
+    date: "Septiembre, 2024",
+    description:
+      "Certificado otorgado por Platzi que valida mis conocimientos en el desarrollo front-end con HTML, CSS y JavaScript.",
+    link: "https://drive.google.com/file/d/1LOC-Z8Fud_OIKAA1guKyV7qFhfttOVcg/view?usp=sharing",
+    entity: "Platzi",
+  },
+  {
+    title: "Curso profesional de Scrum",
+    date: "Agosto, 2024",
+    description:
+      "Certificación profesional de Platzi que valida mis conocimientos en metodologías ágiles y gestión de proyectos con Scrum.",
+    link: "https://drive.google.com/file/d/1zl-KYaFUz99jmAD-JE28wF2moz-9-E8S/view?usp=sharing",
+    entity: "Platzi",
+  },
+  {
+    title: "Administración de actividades con Trello",
+    date: "Agosto, 2024",
+    description:
+      "Certificado de Platzi sobre el uso de Trello para la organización, planificación y gestión de actividades y proyectos.",
+    link: "https://drive.google.com/file/d/16eMnKKbuSUnB_XIYoEveLYtuTKLzTw_3/view?usp=sharing",
+    entity: "Platzi",
+  },
+  {
+    title: "Curso de VueJS: Introducción y Fundamentos",
+    date: "Agosto, 2024",
+    description:
+      "Certificación de Platzi sobre los fundamentos de Vue.js, incluyendo directivas, componentes y reactividad.",
+    link: "https://drive.google.com/file/d/1jFwFXeX_nES6jbbvc_6S8IWFUemOWIOc/view?usp=sharing",
+    entity: "Platzi",
+  },
+  {
+    title: "Curso de VueJS: Componentes y Composition API",
+    date: "Agosto, 2024",
+    description:
+      "Certificación de Platzi en Vue.js enfocado en la creación de componentes y el uso de la Composition API.",
+    link: "https://drive.google.com/file/d/1MVWCYl5J4lszi3odMJ2f3NwkNmU6pwP3/view?usp=sharing",
+    entity: "Platzi",
+  },
+  {
+    title: "Curso de VueJS: Navegación con Vue Router",
+    date: "Agosto, 2024",
+    description:
+      "Certificación de Platzi que valida mi conocimiento en el manejo de rutas y navegación en aplicaciones Vue.js.",
+    link: "https://drive.google.com/file/d/1YsZIW5qMHGKB_PLJmu971n8jr6JeDCyA/view?usp=sharing",
+    entity: "Platzi",
+  },
+  {
+    title: "Ethical Hacking y Pentesting",
+    date: "Agosto, 2024",
+    description:
+      "Certificación de HackerMentor en pruebas de penetración, seguridad informática y técnicas de ethical hacking.",
+    link: "https://drive.google.com/file/d/1mdZm_vN3NbTQykHZsPfTAPZmFLp-GszL/view?usp=sharing",
+    entity: "HackerMentor",
+  },
+];
+---
+
+<div>
+  <ol id="certificates-list" class="relative border-s border-dracula-purple/70">
+    {
+      certificates.map(({ title, date, description, link, entity }, index) => (
+        <li class={`cert-item mb-10 ms-4 ${index > 2 ? "hidden" : ""}`}>
+          <div class="absolute w-3 h-3 bg-dracula-purple rounded-full mt-1.5 -start-1.5 border border-dracula-background" />
+          <time class="mb-1 text-sm font-normal leading-none text-dracula-orange ">
+            {date} - {entity}
+          </time>
+          <h3 class="text-lg font-semibold text-white">{title}</h3>
+          <p class="mb-4 text-base font-normal text-gray-500">{description}</p>
+          <a
+            href={link}
+            target="_blank"
+            class="inline-flex items-center px-4 py-2 text-sm rounded-md bg-dracula-comment/20 border border-dracula-purple text-dracula-foreground hover:bg-dracula-comment/30 hover:text-dracula-purple hover:border-dracula-purple hover:scale-105 transition-all duration-300"
+          >
+            Ver Certificado
+          </a>
+        </li>
+      ))
+    }
+  </ol>
+  <button
+    id="toggleButton"
+    type="button"
+    class="flex items-center gap-2 px-4 py-2 mx-auto text-sm font-medium
+           text-white border border-dracula-purple rounded-md cursor-pointer
+           bg-transparent transition-all duration-200
+           hover:bg-dracula-pink hover:border-dracula-pink hover:text-dracula-background
+           hover:scale-105"
+  >
+    <svg
+      class="w-4 h-4"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 20 20"
+      aria-hidden="true"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M10 3a1 1 0 0 1 1 1v5h5a1 1 0 1 1 0 2h-5v5a1 1 0 1 1-2 0v-5H4a1 1 0 1 1 0-2h5V4a1 1 0 0 1 1-1Z"
+        clip-rule="evenodd"></path>
+    </svg>
+    Ver todos los certificados
+  </button>
+</div>
+
+<script>
+  const btn = document.getElementById("toggleButton");
+  const items = document.querySelectorAll(".cert-item");
+  let showMore = false;
+
+  //TODO: Agregar animación
+  if (btn) {
+    btn.addEventListener("click", () => {
+      showMore = !showMore;
+      items.forEach((el, index) => {
+        if (index > 2) {
+          el.classList.toggle("hidden", !showMore);
+        }
+      });
+      btn.textContent = showMore
+        ? "Ver menos certificados"
+        : "Ver todos los certificados";
+    });
+  }
+</script>
