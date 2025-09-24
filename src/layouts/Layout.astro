@@ -33,14 +33,6 @@ import Footer from "../components/Footer.astro";
 			gsap.registerPlugin(ScrollTrigger);
 
 			window.addEventListener("DOMContentLoaded", () => {
-			// Navbar
-			gsap.from(".navbar-animate", {
-				y: -40,
-				opacity: 0,
-				duration: 1,
-				ease: "power3.out"
-			});
-
 			// Secciones
 			gsap.utils.toArray(".section-animate").forEach((el, i) => {
 				gsap.from(el as HTMLElement, {
