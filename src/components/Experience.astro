@@ -1,40 +1,33 @@
 ---
+import { getCollection } from "astro:content";
 import IconTimeLine from "./icons/IconTimeLine.astro";
 
-const experience = [
-  {
-    title: "HelixSoftware S.A.S",
-    date: "Desde Noviembre 2024",
-    description:
-      "Desarrollo de una aplicación web para la gestión de clases en una academia de inglés ubicada en Villavicencio, Meta, Colombia. El sistema ha sido implementado utilizando tecnologías como VueJS, Bootstrap, Django y Docker. Además, cuenta con integración de pasarelas de pago como ePayco e incorpora inteligencia artificial para la transcripción automática entre español e inglés, y viceversa.",
-    link: "https://helixsoft.com.co/",
-    current: true,
-  },
-];
+const experience = await getCollection("experience");
+const sortedExperience = experience.sort((a, b) => (b.data.current ? 1 : 0) - (a.data.current ? 1 : 0));
 ---
 
 <ol class="ml-3.5 relative border-s" style="border-color: var(--border-color);">
   {
-    experience.map(({ title, date, description, link, current }) => (
+    sortedExperience.map((exp) => (
       <li class="mb-10 ms-6">
         <IconTimeLine />
         <h3 class="flex items-center mb-1 text-lg font-semibold" style="color: var(--text-primary);">
-          {title}
-          {current && (
+          {exp.data.title}
+          {exp.data.current && (
             <span class="text-sm font-bold me-2 px-2.5 py-0.5 rounded-sm ms-3" style="background-color: var(--accent-purple); color: var(--bg-primary);">
               Actualmente
             </span>
           )}
         </h3>
         <time class="block mb-2 text-sm font-normal leading-none" style="color: var(--accent-orange);">
-          {date}
+          {exp.data.date}
         </time>
         <p class="mb-4 text-base font-normal" style="color: var(--text-secondary);">
-          {description}
+          {exp.body}
         </p>
-        {link && (
+        {exp.data.link && (
           <a
-            href={link}
+            href={exp.data.link}
             target="_blank"
             class="inline-flex items-center px-4 py-2 text-sm rounded-md border hover:scale-105 transition-all duration-300"
             style="background-color: var(--bg-secondary); border-color: var(--border-color); color: var(--text-primary);"

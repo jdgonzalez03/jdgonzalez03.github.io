@@ -1,0 +1,97 @@
+---
+const email = "juandavidgonzalezurrego@gmail.com";
+---
+
+<form id="contact-form" class="space-y-4">
+  <div class="grid md:grid-cols-2 gap-4">
+    <div>
+      <label for="name" class="block text-sm font-medium mb-2" style="color: var(--text-secondary);">
+        Nombre
+      </label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 transition-all"
+        style="background-color: var(--bg-secondary); border-color: var(--border-color); color: var(--text-primary);"
+        placeholder="Tu nombre"
+      />
+    </div>
+    <div>
+      <label for="email" class="block text-sm font-medium mb-2" style="color: var(--text-secondary);">
+        Email
+      </label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 transition-all"
+        style="background-color: var(--bg-secondary); border-color: var(--border-color); color: var(--text-primary);"
+        placeholder="tu@email.com"
+      />
+    </div>
+  </div>
+
+  <div>
+    <label for="subject" class="block text-sm font-medium mb-2" style="color: var(--text-secondary);">
+      Asunto
+    </label>
+    <input
+      type="text"
+      id="subject"
+      name="subject"
+      required
+      class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 transition-all"
+      style="background-color: var(--bg-secondary); border-color: var(--border-color); color: var(--text-primary);"
+      placeholder="Asunto del mensaje"
+    />
+  </div>
+
+  <div>
+    <label for="message" class="block text-sm font-medium mb-2" style="color: var(--text-secondary);">
+      Mensaje
+    </label>
+    <textarea
+      id="message"
+      name="message"
+      rows="4"
+      required
+      class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 transition-all resize-none"
+      style="background-color: var(--bg-secondary); border-color: var(--border-color); color: var(--text-primary);"
+      placeholder="Escribe tu mensaje..."
+    ></textarea>
+  </div>
+
+  <button
+    type="submit"
+    class="w-full py-3 px-6 rounded-lg font-medium transition-all duration-200 hover:scale-[1.02]"
+    style="background-color: var(--accent-purple); color: var(--bg-primary);"
+  >
+    Enviar Mensaje
+  </button>
+</form>
+
+<script is:inline>
+  const email = "juandavidgonzalezurrego@gmail.com";
+  const form = document.getElementById("contact-form");
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const subjectInput = document.getElementById("subject");
+    const messageInput = document.getElementById("message");
+
+    const name = nameInput?.value || "";
+    const mail = emailInput?.value || "";
+    const subject = subjectInput?.value || "";
+    const message = messageInput?.value || "";
+
+    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Nombre: ${name}\nEmail: ${mail}\n\nMensaje:\n${message}`)}`;
+
+    window.location.href = mailtoLink;
+  });
+</script>

@@ -39,4 +39,15 @@ const certificates = defineCollection({
 	}),
 });
 
-export const collections = { blog, projects, certificates };
+const experience = defineCollection({
+	type: 'content',
+	schema: z.object({
+		title: z.string(),
+		company: z.string(),
+		date: z.string(),
+		current: z.boolean().default(false),
+		link: z.string().optional(),
+	}),
+});
+
+export const collections = { blog, projects, certificates, experience };
