@@ -3,7 +3,16 @@
   target="_blank"
   rel="noopener noreferrer"
   role="link"
-  class="inline-flex items-center justify-center gap-2 px-4 py-1 text-sm border border-dracula-purple bg-dracula-comment/20 hover:bg-dracula-comment/30 hover:text-dracula-purple rounded-full hover:scale-105 transition-all duration-200 ease-in-out"
+  class="inline-flex items-center justify-center gap-2 px-4 py-1 text-sm border rounded-full hover:scale-105 transition-all duration-200 ease-in-out"
+  style="border-color: var(--accent-purple); background-color: var(--bg-secondary); color: var(--text-primary);"
 >   
   <slot />
 </a>
+
+<style>
+  a:hover {
+    background-color: var(--bg-secondary) !important;
+    color: var(--accent-purple) !important;
+    border-color: var(--accent-purple) !important;
+  }
+</style>

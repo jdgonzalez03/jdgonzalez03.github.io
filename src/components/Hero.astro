@@ -18,39 +18,28 @@ const isAvailable = true;
     />
     <div class="flex flex-col gap-2">
       <span
-        class="bg-dracula-green/10 border border-dracula-green/80 text-dracula-green text-xs font-medium ml-2 px-4 py-2 rounded-full cursor-pointer hover:bg-dracula-green/20 hover:scale-105 transition-all duration-200 ease-in-out"
-        >Disponible para trabajar</span
+        class="text-xs font-medium ml-2 px-4 py-2 rounded-full cursor-pointer hover:scale-105 transition-all duration-200 ease-in-out"
+        style="background-color: color-mix(in srgb, var(--accent-green) 10%, transparent); border: 1px solid color-mix(in srgb, var(--accent-green) 80%, transparent); color: var(--accent-green);"
       >
-      {
-        !isAvailable && (
-          <span class=" text-dracula-orange/90 px-4 py-1 text-xs font-medium rounded-lg text-center">
-            Contrata a mis
-            <a
-              href="/friends/"
-              target="_blank"
-              class="text-dracula-red font-bold hover:text-dracula-orange transition-all duration-200 ease-in-out"
-            >
-              amigos
-            </a>
-          </span>
-        )
-      }
+        Disponible para trabajar
+      </span>
     </div>
   </div>
 
-  <h1 class="text-4xl mb-2 font-extrabold">
+  <h1 class="text-4xl mb-2 font-extrabold" style="color: var(--text-primary);">
     <span
-      class="bg-clip-text text-transparent bg-gradient-to-r from-dracula-pink to-dracula-purple"
+      class="bg-clip-text text-transparent bg-gradient-to-r"
+      style="background-image: linear-gradient(to right, var(--accent-pink), var(--accent-purple));"
     >
       Soy, Juan Gonzalez
     </span>
   </h1>
-  <p class="text-lg text-dracula-foreground/80">
-    Desarrollador <span class="font-bold text-dracula-cyan">web full stack</span> con una pasión por la tecnología
-    y el desarrollo de software. Cuento con <span class="font-bold text-dracula-orange">13 meses de experiencia</span> trabajando
-    en el desarrollo de aplicaciones web, utilizando tecnologías modernas como <span class="font-bold text-dracula-green">Django</span
-    > para el backend y <span class="font-bold text-dracula-yellow">Vue.js</span> con Composition API para el frontend.
-      Actualmente resido en <span class="font-bold text-dracula-purple">Villavicencio, Colombia</span>.
+  <p class="text-lg" style="color: var(--text-secondary);">
+    Desarrollador <span class="font-bold" style="color: var(--accent-cyan);">web full stack</span> con una pasión por la tecnología
+    y el desarrollo de software. Cuento con <span class="font-bold" style="color: var(--accent-orange);">13 meses de experiencia</span> trabajando
+    en el desarrollo de aplicaciones web, utilizando tecnologías modernas como <span class="font-bold" style="color: var(--accent-green);">Django</span
+    > para el backend y <span class="font-bold" style="color: var(--accent-yellow);">Vue.js</span> con Composition API para el frontend.
+      Actualmente resido en <span class="font-bold" style="color: var(--accent-purple);">Villavicencio, Colombia</span>.
   </p>
 
   <nav class="flex flex-wrap gap-4 mt-8">

@@ -13,30 +13,31 @@ const experience = [
 ];
 ---
 
-<ol class="ml-3.5 relative border-s border-gray-200 dark:border-gray-700">
+<ol class="ml-3.5 relative border-s" style="border-color: var(--border-color);">
   {
     experience.map(({ title, date, description, link, current }) => (
       <li class="mb-10 ms-6">
         <IconTimeLine />
-        <h3 class="flex items-center mb-1 text-lg font-semibold text-white">
+        <h3 class="flex items-center mb-1 text-lg font-semibold" style="color: var(--text-primary);">
           {title}
           {current && (
-            <span class="text-sm font-bold me-2 px-2.5 py-0.5 rounded-sm bg-dracula-purple/70 text-dracula-background ms-3">
+            <span class="text-sm font-bold me-2 px-2.5 py-0.5 rounded-sm ms-3" style="background-color: var(--accent-purple); color: var(--bg-primary);">
               Actualmente
             </span>
           )}
         </h3>
-        <time class="block mb-2 text-sm font-normal leading-none text-dracula-orange">
+        <time class="block mb-2 text-sm font-normal leading-none" style="color: var(--accent-orange);">
           {date}
         </time>
-        <p class="mb-4 text-base font-normal text-dracula-foreground/70">
+        <p class="mb-4 text-base font-normal" style="color: var(--text-secondary);">
           {description}
         </p>
         {link && (
           <a
             href={link}
             target="_blank"
-            class="inline-flex items-center px-4 py-2 text-sm rounded-md bg-dracula-comment/20 border border-dracula-purple text-dracula-foreground hover:bg-dracula-comment/30 hover:text-dracula-purple hover:border-dracula-purple hover:scale-105 transition-all duration-300"
+            class="inline-flex items-center px-4 py-2 text-sm rounded-md border hover:scale-105 transition-all duration-300"
+            style="background-color: var(--bg-secondary); border-color: var(--border-color); color: var(--text-primary);"
           >
             Saber más
             <svg

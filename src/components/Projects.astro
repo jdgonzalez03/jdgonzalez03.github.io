@@ -16,7 +16,7 @@ const projects = [
 
 {
   projects.map((project) => (
-    <article class="mb-8 flex flex-col md:flex-row bg-dracula-background/50 border border-dracula-purple/30 rounded-xl overflow-hidden hover:border-dracula-purple/50 hover:scale-105 hover:shadow-lg transition-all duration-300">
+    <article class="mb-8 flex flex-col md:flex-row border rounded-xl overflow-hidden hover:scale-105 hover:shadow-lg transition-all duration-300" style="background-color: color-mix(in srgb, var(--bg-primary) 80%, transparent); border-color: var(--border-color);">
       <div class="md:w-1/3 relative">
         <img
           class="w-full h-full object-cover aspect-video md:aspect-auto"
@@ -27,24 +27,25 @@ const projects = [
       </div>
       <div class="md:w-2/3 p-6 flex flex-col justify-between">
         <div>
-          <h3 class="text-xl font-bold mb-3 text-dracula-foreground">
+          <h3 class="text-xl font-bold mb-3" style="color: var(--text-primary);">
             {project.title}
           </h3>
           <div class="flex flex-wrap gap-2 mb-6">
             {project.technologies.map((tech) => (
-              <span class="px-3 py-1 bg-dracula-green/20 text-dracula-green border border-dracula-green rounded-full text-xs">
+              <span class="px-3 py-1 rounded-full text-xs" style="background-color: color-mix(in srgb, var(--accent-green) 20%, transparent); color: var(--accent-green); border: 1px solid var(--accent-green);">
                 {tech}
               </span>
             ))}
           </div>
-          <p class="text-dracula-foreground/80 mb-4">{project.description}</p>
+          <p class="mb-4" style="color: var(--text-secondary);">{project.description}</p>
         </div>
         <div class="flex gap-4">
           <a
             href={project.linkRepo}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center px-4 py-2 text-sm rounded-md bg-dracula-comment/20 border border-dracula-purple text-dracula-foreground hover:bg-dracula-comment/30 hover:text-dracula-purple hover:border-dracula-purple hover:scale-105 transition-all duration-300"
+            class="inline-flex items-center px-4 py-2 text-sm rounded-md border hover:scale-105 transition-all duration-300"
+            style="background-color: var(--bg-secondary); border-color: var(--border-color); color: var(--text-primary);"
           >
             <GithubIcon />
             Código
@@ -53,7 +54,8 @@ const projects = [
             href={project.linkDemo}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center px-4 py-2 bg-dracula-yellow/30 border border-dracula-yellow text-dracula-yellow rounded-lg hover:bg-dracula-yellow/40 hover:scale-105 transition-colors duration-200"
+            class="inline-flex items-center px-4 py-2 rounded-lg hover:scale-105 transition-colors duration-200"
+            style="background-color: color-mix(in srgb, var(--accent-yellow) 30%, transparent); border: 1px solid var(--accent-yellow); color: var(--accent-yellow);"
           >
             <DemoIcon />
             Demo
