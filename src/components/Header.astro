@@ -28,24 +28,100 @@ const links = [
     class="mt-2 backdrop-blur-sm border-2 rounded-full px-4 py-3 flex items-center justify-between gap-4"
     style="background-color: var(--bg-secondary); border-color: var(--border-color);"
   >
+    <div class="hidden md:flex items-center gap-4">
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            aria-label={link.label}
+            class="px-2 text-sm font-bold hover:scale-110 transition-all duration-200 ease-in-out"
+            style="color: var(--text-secondary);"
+          >
+            {link.title}
+          </a>
+        ))
+      }
+    </div>
+
+    <button
+      id="mobile-menu-btn"
+      class="md:hidden p-2 rounded-full focus:outline-none"
+      style="color: var(--text-secondary);"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+    >
+      <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <slot name="theme-toggle" />
+  </nav>
+</header>
+
+<div
+  id="mobile-menu"
+  class="fixed inset-0 z-40 hidden md:hidden"
+  style="background-color: var(--bg-primary);"
+>
+  <div class="flex flex-col items-center justify-center h-full gap-8">
     {
       links.map((link) => (
         <a
           href={link.href}
           aria-label={link.label}
-          class="px-2 text-sm font-bold hover:scale-110 transition-all duration-200 ease-in-out"
-          style="color: var(--text-secondary);"
+          class="text-2xl font-bold hover:scale-110 transition-all duration-200"
+          style="color: var(--text-primary);"
         >
           {link.title}
         </a>
       ))
     }
-    <slot name="theme-toggle" />
-  </nav>
-</header>
+  </div>
+</div>
 
 <style>
   nav a:hover {
     color: var(--accent-purple) !important;
   }
+
+  #mobile-menu a:hover {
+    color: var(--accent-purple) !important;
+  }
 </style>
+
+<script>
+  const menuBtn = document.getElementById("mobile-menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const menuIcon = document.getElementById("menu-icon");
+  const closeIcon = document.getElementById("close-icon");
+
+  const toggleMenu = () => {
+    const isOpen = mobileMenu?.classList.toggle("hidden") === false;
+    
+    if (menuIcon && closeIcon) {
+      if (isOpen) {
+        menuIcon.classList.add("hidden");
+        closeIcon.classList.remove("hidden");
+      } else {
+        menuIcon.classList.remove("hidden");
+        closeIcon.classList.add("hidden");
+      }
+    }
+
+    if (menuBtn) {
+      menuBtn.setAttribute("aria-expanded", String(isOpen));
+    }
+  };
+
+  menuBtn?.addEventListener("click", toggleMenu);
+
+  mobileMenu?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      toggleMenu();
+    });
+  });
+</script>
