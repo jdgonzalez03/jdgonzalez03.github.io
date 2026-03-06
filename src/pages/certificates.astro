@@ -7,15 +7,18 @@ const certificates = await getCollection("certificates");
 
 <Layout>
   <main class="container mx-auto px-4 py-8 mt-20">
-    <div class="max-w-2xl mx-auto">
+    <div class="max-w-2xl mx-auto section-animate">
       <h1 class="text-4xl font-extrabold mb-8" style="color: var(--accent-purple);">
         Certificados
       </h1>
 
       <div class="relative border-l" style="border-color: var(--accent-purple);">
         {
-          certificates.map((cert) => (
-            <div class="mb-8 ms-8 relative">
+          certificates.map((cert, index) => (
+            <div 
+              class="mb-8 ms-8 relative stagger-item" 
+              data-index={index}
+            >
               <div class="absolute w-4 h-4 rounded-full -start-2" style="background-color: var(--accent-purple); border: 2px solid var(--bg-primary);"></div>
               
               <div class="border rounded-xl p-6 hover:scale-[1.01] transition-transform" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
