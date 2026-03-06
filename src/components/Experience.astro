@@ -6,31 +6,30 @@ const experience = await getCollection("experience");
 const sortedExperience = experience.sort((a, b) => (b.data.current ? 1 : 0) - (a.data.current ? 1 : 0));
 ---
 
-<ol class="ml-3.5 relative border-s" style="border-color: var(--border-color);">
+<ol class="ml-3.5 relative border-s border-dracula-purple/70 dark:border-dracula-purple/70">
   {
     sortedExperience.map((exp) => (
       <li class="mb-10 ms-6">
         <IconTimeLine />
-        <h3 class="flex items-center mb-1 text-lg font-semibold" style="color: var(--text-primary);">
+        <h3 class="flex items-center mb-1 text-lg font-semibold text-dracula-foreground dark:text-dracula-foreground">
           {exp.data.title}
           {exp.data.current && (
-            <span class="text-sm font-bold me-2 px-2.5 py-0.5 rounded-sm ms-3" style="background-color: var(--accent-purple); color: var(--bg-primary);">
+            <span class="text-sm font-bold me-2 px-2.5 py-0.5 rounded-sm ms-3 bg-dracula-purple/70 dark:bg-dracula-purple/70 text-dracula-background dark:text-dracula-background">
               Actualmente
             </span>
           )}
         </h3>
-        <time class="block mb-2 text-sm font-normal leading-none" style="color: var(--accent-orange);">
+        <time class="block mb-2 text-sm font-normal leading-none text-dracula-orange dark:text-dracula-orange">
           {exp.data.date}
         </time>
-        <p class="mb-4 text-base font-normal" style="color: var(--text-secondary);">
+        <p class="mb-4 text-base font-normal text-dracula-foreground/70 dark:text-dracula-foreground/70">
           {exp.body}
         </p>
         {exp.data.link && (
           <a
             href={exp.data.link}
             target="_blank"
-            class="inline-flex items-center px-4 py-2 text-sm rounded-md border hover:scale-105 transition-all duration-300"
-            style="background-color: var(--bg-secondary); border-color: var(--border-color); color: var(--text-primary);"
+            class="inline-flex items-center px-4 py-2 text-sm rounded-md border hover:scale-105 transition-all duration-300 bg-dracula-comment/20 dark:bg-dracula-comment/20 border-dracula-purple dark:border-dracula-purple text-dracula-foreground dark:text-dracula-foreground hover:bg-dracula-comment/30 dark:hover:bg-dracula-comment/30 hover:text-dracula-purple dark:hover:text-dracula-purple"
           >
             Saber más
             <svg

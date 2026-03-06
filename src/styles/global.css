@@ -31,48 +31,21 @@
     --color-light-yellow: #ca8a04;
 }
 
-/* CSS Variables for theming */
-:root {
-    --bg-primary: #282a36;
-    --text-primary: #f8f8f2;
-    --text-secondary: rgba(248, 248, 242, 0.7);
-    --accent-purple: #bd93f9;
-    --accent-pink: #ff79c6;
-    --accent-cyan: #8be9fd;
-    --accent-green: #50fa7b;
-    --accent-orange: #ffb86c;
-    --accent-yellow: #f1fa8c;
-    --accent-red: #ff5555;
-    --bg-secondary: rgba(98, 114, 164, 0.2);
-    --border-color: rgba(189, 147, 249, 0.3);
-}
-
-/* Light theme */
-html.light {
-    --bg-primary: #fef5f8;
-    --text-primary: #1a1625;
-    --text-secondary: #4a4458;
-    --accent-purple: #9333ea;
-    --accent-pink: #e11d80;
-    --accent-cyan: #0891b2;
-    --accent-green: #059669;
-    --accent-orange: #ea580c;
-    --accent-yellow: #ca8a04;
-    --accent-red: #dc2626;
-    --bg-secondary: rgba(232, 213, 224, 0.5);
-    --border-color: rgba(147, 51, 234, 0.3);
-}
-
-/* Body styles using CSS variables */
+/* Default: Light mode (no dark class) */
 body {
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
+    background-color: #fef5f8;
+    color: #1a1625;
+}
+
+/* Dark mode - when html has .dark class */
+html.dark body {
+    background-color: #282a36;
+    color: #f8f8f2;
 }
 
 /* Prevent flash of wrong theme */
 html {
     visibility: visible;
-    scroll-behavior: smooth;
 }
 
 @media (prefers-reduced-motion: reduce) {

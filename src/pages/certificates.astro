@@ -8,29 +8,29 @@ const certificates = await getCollection("certificates");
 <Layout>
   <main class="container mx-auto px-4 py-8 mt-20">
     <div class="max-w-2xl mx-auto section-animate">
-      <h1 class="text-4xl font-extrabold mb-8" style="color: var(--accent-purple);">
+      <h1 class="text-4xl font-extrabold mb-8 text-dracula-purple dark:text-dracula-purple">
         Certificados
       </h1>
 
-      <div class="relative border-l" style="border-color: var(--accent-purple);">
+      <div class="relative border-l border-dracula-purple/70 dark:border-dracula-purple/70">
         {
           certificates.map((cert, index) => (
             <div 
               class="mb-8 ms-8 relative stagger-item" 
               data-index={index}
             >
-              <div class="absolute w-4 h-4 rounded-full -start-2" style="background-color: var(--accent-purple); border: 2px solid var(--bg-primary);"></div>
+              <div class="absolute w-4 h-4 rounded-full -start-2 bg-dracula-purple dark:bg-dracula-purple border-2 border-dracula-background dark:border-dracula-background"></div>
               
-              <div class="border rounded-xl p-6 hover:scale-[1.01] transition-transform" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
+              <div class="border rounded-xl p-6 hover:scale-[1.01] transition-transform bg-dracula-comment/20 dark:bg-dracula-comment/20 border-dracula-purple/30 dark:border-dracula-purple/30">
                 <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                   <div class="flex-1">
-                    <h2 class="text-xl font-bold mb-2" style="color: var(--text-primary);">
+                    <h2 class="text-xl font-bold mb-2 text-dracula-foreground dark:text-dracula-foreground">
                       {cert.data.title}
                     </h2>
-                    <time class="text-sm block mb-2" style="color: var(--accent-orange);">
+                    <time class="text-sm block mb-2 text-dracula-orange dark:text-dracula-orange">
                       {cert.data.date} - {cert.data.entity}
                     </time>
-                    <p class="mb-4" style="color: var(--text-secondary);">
+                    <p class="mb-4 text-dracula-foreground/70 dark:text-dracula-foreground/70">
                       {cert.data.description}
                     </p>
                   </div>
@@ -40,8 +40,7 @@ const certificates = await getCollection("certificates");
                       href={cert.data.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="inline-flex items-center gap-2 px-4 py-2 text-sm rounded-lg border hover:scale-105 transition-transform whitespace-nowrap"
-                      style="background-color: var(--bg-secondary); border-color: var(--accent-purple); color: var(--text-primary);"
+                      class="inline-flex items-center gap-2 px-4 py-2 text-sm rounded-lg border hover:scale-105 transition-transform whitespace-nowrap bg-dracula-comment/20 dark:bg-dracula-comment/20 border-dracula-purple dark:border-dracula-purple text-dracula-foreground dark:text-dracula-foreground"
                     >
                       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />

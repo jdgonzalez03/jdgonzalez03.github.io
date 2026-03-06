@@ -4,12 +4,12 @@
 <button
   id="theme-toggle"
   type="button"
-  class="theme-toggle p-2 rounded-full transition-all duration-200 hover:scale-110 focus:outline-none"
+  class="theme-toggle p-2 rounded-full transition-all duration-200 hover:scale-110 focus:outline-none text-dracula-purple dark:text-dracula-purple"
   aria-label="Cambiar tema"
 >
   <svg
     id="sun-icon"
-    class="w-5 h-5 hidden"
+    class="w-5 h-5 hidden dark:block text-dracula-yellow"
     fill="currentColor"
     viewBox="0 0 20 20"
     xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +22,7 @@
   </svg>
   <svg
     id="moon-icon"
-    class="w-5 h-5 block"
+    class="w-5 h-5 block dark:hidden text-light-purple"
     fill="currentColor"
     viewBox="0 0 20 20"
     xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +31,7 @@
   </svg>
 </button>
 
-<script>
+<script is:inline>
   const toggle = document.getElementById("theme-toggle");
 
   const getThemePreference = () => {
@@ -43,7 +43,7 @@
       : "light";
   };
 
-  const updateIcons = (theme: string) => {
+  const updateIcons = (theme) => {
     const sunIcon = document.getElementById("sun-icon");
     const moonIcon = document.getElementById("moon-icon");
     if (sunIcon && moonIcon) {
@@ -61,7 +61,7 @@
     }
   };
 
-  const setTheme = (theme: string) => {
+  const setTheme = (theme) => {
     document.documentElement.classList.remove("light", "dark");
     document.documentElement.classList.add(theme);
     localStorage.setItem("theme", theme);
@@ -89,18 +89,13 @@
 <style>
   .theme-toggle {
     background-color: transparent;
-    color: var(--accent-purple);
   }
 
   .theme-toggle:hover {
-    background-color: var(--bg-secondary);
+    background-color: rgba(189, 147, 249, 0.1);
   }
 
-  #sun-icon {
-    color: var(--accent-yellow);
-  }
-
-  #moon-icon {
-    color: var(--accent-pink);
+  :global(.light) .theme-toggle:hover {
+    background-color: rgba(255, 107, 157, 0.1);
   }
 </style>
