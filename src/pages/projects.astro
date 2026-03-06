@@ -11,7 +11,7 @@ const sortedProjects = projects.sort((a, b) => (b.data.featured ? 1 : 0) - (a.da
 <Layout>
   <main class="container mx-auto px-4 py-8 mt-20">
     <div class="max-w-2xl mx-auto section-animate">
-      <h1 class="text-4xl font-extrabold mb-8 text-dracula-purple dark:text-dracula-purple">
+      <h1 class="text-4xl font-extrabold mb-8 text-light-purple dark:text-dracula-purple">
         Proyectos
       </h1>
 
@@ -19,7 +19,7 @@ const sortedProjects = projects.sort((a, b) => (b.data.featured ? 1 : 0) - (a.da
         {
           sortedProjects.map((project, index) => (
             <article 
-              class="border rounded-xl overflow-hidden hover:scale-[1.02] transition-all duration-300 flex flex-col bg-dracula-comment/20 dark:bg-dracula-comment/20 border-dracula-purple/30 dark:border-dracula-purple/30" 
+              class="border rounded-xl overflow-hidden hover:scale-[1.02] transition-all duration-300 flex flex-col bg-light-comment/20 dark:bg-dracula-comment/20 border-light-purple/30 dark:border-dracula-purple/30" 
               data-index={index}
             >
               <div class="relative">
@@ -29,21 +29,21 @@ const sortedProjects = projects.sort((a, b) => (b.data.featured ? 1 : 0) - (a.da
                   class="w-full h-48 object-cover"
                 />
                 {project.data.featured && (
-                  <span class="absolute top-2 right-2 px-2 py-1 text-xs font-bold rounded bg-dracula-purple dark:bg-dracula-purple text-dracula-background dark:text-dracula-background">
+                  <span class="absolute top-2 right-2 px-2 py-1 text-xs font-bold rounded bg-light-purple dark:bg-dracula-purple text-light-background dark:text-dracula-background">
                     Destacado
                   </span>
                 )}
               </div>
               <div class="p-6 flex flex-col flex-grow">
-                <h2 class="text-xl font-bold mb-2 text-dracula-foreground dark:text-dracula-foreground">
+                <h2 class="text-xl font-bold mb-2 text-light-foreground dark:text-dracula-foreground">
                   {project.data.title}
                 </h2>
-                <p class="mb-4 flex-grow text-dracula-foreground/70 dark:text-dracula-foreground/70">
+                <p class="mb-4 flex-grow text-light-foreground/70 dark:text-dracula-foreground/70">
                   {project.data.description}
                 </p>
                 <div class="flex flex-wrap gap-2 mb-4">
                   {project.data.technologies.map((tech) => (
-                    <span class="px-2 py-1 text-xs rounded-full bg-dracula-green/20 dark:bg-dracula-green/20 text-dracula-green dark:text-dracula-green">
+                    <span class="px-2 py-1 text-xs rounded-full bg-light-green/20 dark:bg-dracula-green/20 text-light-green dark:text-dracula-green">
                       {tech}
                     </span>
                   ))}
@@ -54,7 +54,7 @@ const sortedProjects = projects.sort((a, b) => (b.data.featured ? 1 : 0) - (a.da
                       href={project.data.links.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="inline-flex items-center gap-2 px-4 py-2 text-sm rounded-lg hover:scale-105 transition-transform bg-dracula-yellow/30 dark:bg-dracula-yellow/30 border border-dracula-yellow dark:border-dracula-yellow text-dracula-yellow dark:text-dracula-yellow"
+                      class="inline-flex items-center gap-2 px-4 py-2 text-sm rounded-lg hover:scale-105 transition-transform bg-light-yellow/30 dark:bg-dracula-yellow/30 border border-light-yellow dark:border-dracula-yellow text-light-yellow dark:text-dracula-yellow"
                     >
                       <DemoIcon />
                       Demo
@@ -65,7 +65,7 @@ const sortedProjects = projects.sort((a, b) => (b.data.featured ? 1 : 0) - (a.da
                       href={project.data.links.repo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="inline-flex items-center gap-2 px-4 py-2 text-sm rounded-lg border hover:scale-105 transition-transform bg-dracula-comment/20 dark:bg-dracula-comment/20 border-dracula-purple/30 dark:border-dracula-purple/30 text-dracula-foreground dark:text-dracula-foreground"
+                      class="inline-flex items-center gap-2 px-4 py-2 text-sm rounded-lg border hover:scale-105 transition-transform bg-light-comment/20 dark:bg-dracula-comment/20 border-light-purple/30 dark:border-dracula-purple/30 text-light-foreground dark:text-dracula-foreground"
                     >
                       <GithubIcon />
                       Código

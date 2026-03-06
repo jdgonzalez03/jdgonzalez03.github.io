@@ -25,7 +25,7 @@ const links = [
 
 <header class="w-full flex justify-center items-center fixed top-0 z-50 mt-2">
   <nav
-    class="mt-2 backdrop-blur-sm border-2 rounded-full px-4 py-3 flex items-center justify-between gap-4 bg-dracula-comment/20 dark:bg-dracula-comment/20 border-dracula-purple/30 dark:border-dracula-purple/30"
+    class="mt-2 backdrop-blur-sm border-2 rounded-full px-4 py-3 flex items-center justify-between gap-4 bg-light-comment/20 dark:bg-dracula-comment/20 border-light-purple/30 dark:border-dracula-purple/30"
   >
     <div class="hidden md:flex items-center gap-4">
       {
@@ -33,7 +33,7 @@ const links = [
           <a
             href={link.href}
             aria-label={link.label}
-            class="px-2 text-sm font-bold hover:scale-110 transition-all duration-200 ease-in-out text-dracula-foreground/80 dark:text-dracula-foreground/80 hover:text-dracula-purple dark:hover:text-dracula-purple"
+            class="px-2 text-sm font-bold hover:scale-110 transition-all duration-200 ease-in-out text-light-foreground/80 dark:text-dracula-foreground/80 hover:text-light-purple dark:hover:text-dracula-purple"
           >
             {link.title}
           </a>
@@ -43,7 +43,7 @@ const links = [
 
     <button
       id="mobile-menu-btn"
-      class="md:hidden p-2 rounded-full focus:outline-none text-dracula-foreground/80 dark:text-dracula-foreground/80"
+      class="md:hidden p-2 rounded-full focus:outline-none text-light-foreground/80 dark:text-dracula-foreground/80"
       aria-label="Abrir menú"
       aria-expanded="false"
     >
@@ -61,7 +61,7 @@ const links = [
 
 <div
   id="mobile-menu"
-  class="fixed inset-0 z-40 hidden md:hidden bg-dracula-background dark:bg-dracula-background"
+  class="fixed inset-0 z-40 hidden md:hidden bg-light-background dark:bg-dracula-background"
 >
   <div class="flex flex-col items-center justify-center h-full gap-8">
     {
@@ -69,7 +69,7 @@ const links = [
         <a
           href={link.href}
           aria-label={link.label}
-          class="text-2xl font-bold hover:scale-110 transition-all duration-200 text-dracula-foreground dark:text-dracula-foreground"
+          class="text-2xl font-bold hover:scale-110 transition-all duration-200 text-light-foreground dark:text-dracula-foreground"
         >
           {link.title}
         </a>
