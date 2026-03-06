@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import ThemeToggle from "../components/ThemeToggle.astro";
 ---
 
 <!doctype html>
@@ -20,9 +21,17 @@ import Footer from "../components/Footer.astro";
 		<meta property="og:description" content="Desarrollador web full stack con una pasión por la tecnología y el desarrollo de software. Cuento con 11 meses de experiencia construyendo aplicaciones web utilizando tecnologías modernas como Django para el backend y Vue.js con Composition API para el frontend. Actualmente resido en Villavicencio, Colombia." />
 		<meta property="og:url" content="https://jdgonzalez03.github.io/" />
 		<title>Juan Gonzalez - Desarrollador Web</title>
+		<script is:inline>
+			(function() {
+				const theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+				document.documentElement.classList.add(theme);
+			})();
+		</script>
 	</head>
-	<body class="min-h-full bg-dracula-background text-dracula-foreground antialiased pt-4">
-		<Header />
+	<body class="min-h-full antialiased pt-4 transition-colors duration-300">
+		<Header>
+			<ThemeToggle slot="theme-toggle" />
+		</Header>
 		<main class="container mx-auto px-4 py-8">
 			<slot />
 		</main>
