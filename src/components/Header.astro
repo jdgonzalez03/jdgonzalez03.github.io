@@ -1,42 +1,51 @@
 ---
 const links = [
   {
-    title: "Experiencia",
-    label: "experiencia",
-    href: "#experiencia",
+    title: "Inicio",
+    label: "inicio",
+    href: "/",
+  },
+  {
+    title: "Blog",
+    label: "blog",
+    href: "/blog",
   },
   {
     title: "Proyectos",
     label: "proyectos",
-    href: "#proyectos",
+    href: "/projects",
   },
   {
-    title: "Sobre mí",
-    label: "sobre-mi",
-    href: "#sobre-mi",
-  },
-  {
-    title: "Contacto",
-    label: "contacto",
-    href: "mailto:juandavidgonzalezurrego@gmail.com",
+    title: "Certificados",
+    label: "certificados",
+    href: "/certificates",
   },
 ];
 ---
 
 <header class="w-full flex justify-center items-center fixed top-0 z-50 mt-2">
   <nav
-    class="mt-2 backdrop-blur-sm bg-dracula-comment/20 border-2 border-dracula-purple/30 rounded-full px-4 py-3 flex items-center justify-between"
+    class="mt-2 backdrop-blur-sm border-2 rounded-full px-4 py-3 flex items-center justify-between gap-4"
+    style="background-color: var(--bg-secondary); border-color: var(--border-color);"
   >
     {
       links.map((link) => (
         <a
           href={link.href}
           aria-label={link.label}
-          class="px-2 text-dracula-foreground/80 text-sm font-bold hover:text-dracula-purple hover:scale-110 transition-all duration-200 ease-in-out"
+          class="px-2 text-sm font-bold hover:scale-110 transition-all duration-200 ease-in-out"
+          style="color: var(--text-secondary);"
         >
           {link.title}
         </a>
       ))
     }
+    <slot name="theme-toggle" />
   </nav>
 </header>
+
+<style>
+  nav a:hover {
+    color: var(--accent-purple) !important;
+  }
+</style>
