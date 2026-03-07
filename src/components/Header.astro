@@ -1,4 +1,7 @@
 ---
+import CloseIcon from "./icons/CloseIcon.astro";
+import OpenIcon from "./icons/OpenIcon.astro";
+
 const links = [
   {
     title: "Inicio",
@@ -47,12 +50,12 @@ const links = [
       aria-label="Abrir menú"
       aria-expanded="false"
     >
-      <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-      <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-      </svg>
+      <div id="menu-icon" class="block">
+        <OpenIcon />
+      </div>
+      <div id="close-icon" class="hidden">
+        <CloseIcon />
+      </div>
     </button>
 
     <slot name="theme-toggle" />
