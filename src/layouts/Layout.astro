@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import ThemeToggle from "../components/ThemeToggle.astro";
 ---
 
 <!doctype html>
@@ -20,51 +21,82 @@ import Footer from "../components/Footer.astro";
 		<meta property="og:description" content="Desarrollador web full stack con una pasión por la tecnología y el desarrollo de software. Cuento con 11 meses de experiencia construyendo aplicaciones web utilizando tecnologías modernas como Django para el backend y Vue.js con Composition API para el frontend. Actualmente resido en Villavicencio, Colombia." />
 		<meta property="og:url" content="https://jdgonzalez03.github.io/" />
 		<title>Juan Gonzalez - Desarrollador Web</title>
+		<script is:inline>
+			(function() {
+				const theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+				document.documentElement.classList.add(theme);
+			})();
+		</script>
 	</head>
-	<body class="min-h-full bg-dracula-background text-dracula-foreground antialiased pt-4">
-		<Header />
+	<body class="min-h-full antialiased pt-4 transition-colors duration-300">
+		<Header>
+			<ThemeToggle slot="theme-toggle" />
+		</Header>
 		<main class="container mx-auto px-4 py-8">
 			<slot />
 		</main>
 		<Footer />
-		<!-- <script type="module" src="/src/utils/gsap.js"></script> -->
 		<script>
 			import gsap from "gsap";
 			import { ScrollTrigger } from "gsap/ScrollTrigger";
 			gsap.registerPlugin(ScrollTrigger);
 
 			window.addEventListener("DOMContentLoaded", () => {
-			// Secciones
-			gsap.utils.toArray(".section-animate").forEach((el, i) => {
-				gsap.from(el as HTMLElement, {
-				y: 40,
-				opacity: 0,
-				duration: 1,
-				ease: "power3.out",
-				scrollTrigger: {
-					trigger: el as HTMLElement,
-					start: "top 80%", // cuando el top de la sección llega al 80% del viewport
-					toggleActions: "play none none none", // solo anima al entrar
-					// markers: true, // descomenta para depurar
-				}
+				// Header animation
+				gsap.from("header", {
+					y: -100,
+					opacity: 0,
+					duration: 0.8,
+					ease: "power3.out"
 				});
-			});
 
-			// Footer
-			gsap.from(".footer-animate", {
-				y: 60,
-				opacity: 0,
-				duration: 1,
-				ease: "power3.out",
-				scrollTrigger: {
-					trigger: ".footer-animate",
-					start: "top bottom",
-					toggleActions: "play none none none"
-				},
-				onComplete: () => {
-					gsap.set(".footer-animate", { clearProps: "all" });
-				}
-			});
+				// Section animations with stagger
+				gsap.utils.toArray(".section-animate").forEach((el, i) => {
+					gsap.from(el as HTMLElement, {
+						y: 50,
+						opacity: 0,
+						duration: 0.8,
+						delay: i * 0.1,
+						ease: "power3.out",
+						scrollTrigger: {
+							trigger: el as HTMLElement,
+							start: "top 85%",
+							toggleActions: "play none none none"
+						}
+					});
+				});
+
+				// Staggered animations for cards/items
+				gsap.utils.toArray(".stagger-item").forEach((el, i) => {
+					gsap.from(el as HTMLElement, {
+						y: 30,
+						opacity: 0,
+						duration: 0.5,
+						delay: i * 0.1,
+						ease: "power2.out",
+						scrollTrigger: {
+							trigger: el as HTMLElement,
+							start: "top 90%",
+							toggleActions: "play none none none"
+						}
+					});
+				});
+
+				// Footer animation
+				gsap.from(".footer-animate", {
+					y: 60,
+					opacity: 0,
+					duration: 1,
+					ease: "power3.out",
+					scrollTrigger: {
+						trigger: ".footer-animate",
+						start: "top bottom",
+						toggleActions: "play none none none"
+					},
+					onComplete: () => {
+						gsap.set(".footer-animate", { clearProps: "all" });
+					}
+				});
 			});
 		</script>
 	</body>

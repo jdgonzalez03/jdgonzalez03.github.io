@@ -5,10 +5,11 @@ import SectionContainer from '../components/SectionContainer.astro';
 import Experience from '../components/Experience.astro';
 import Projects from '../components/Projects.astro';
 import AboutMe from '../components/AboutMe.astro';
-import Certificates from '../components/Certificates.astro';
+import ContactForm from '../components/ContactForm.astro';
 
 import BriefCase from '../components/icons/BriefCase.astro';
 import UserIcon from '../components/icons/User.astro';
+import MailIcon from '../components/icons/Mail.astro';
 ---
 
 <Layout>
@@ -17,32 +18,54 @@ import UserIcon from '../components/icons/User.astro';
       <Hero />
     </SectionContainer>
     <SectionContainer id="experiencia" class="mt-10 section-animate">
-      <h2 class="flex items-center gap-2 font-bold text-2xl text-dracula-purple mb-7">
+      <h2 class="flex items-center gap-2 font-bold text-2xl mb-7 text-dracula-purple dark:text-dracula-purple">
         <BriefCase />
         Experiencia
       </h2>
       <Experience />
     </SectionContainer>
     <SectionContainer id="proyectos" class="mt-5 section-animate">
-      <h2 class="flex items-center gap-2 font-bold text-2xl text-dracula-purple mb-7">
+      <h2 class="flex items-center gap-2 font-bold text-2xl mb-7 text-dracula-purple dark:text-dracula-purple">
         <BriefCase />
-        Proyectos (WIP)
+        Proyectos
       </h2>
       <Projects />
     </SectionContainer>
-    <SectionContainer class="mt-5 section-animate">
-      <h2 class="flex items-center gap-2 font-bold text-2xl text-dracula-purple mb-7">
+    <SectionContainer id="certificados" class="mt-5 section-animate">
+      <h2 class="flex items-center gap-2 font-bold text-2xl mb-7 text-dracula-purple dark:text-dracula-purple">
         <BriefCase />
         Certificados
       </h2>
-      <Certificates />
+      <div class="text-center">
+        <p class="mb-6 text-light-foreground/70 dark:text-dracula-foreground/70">
+          Ver todos mis certificados y certificaciones profesionales.
+        </p>
+        <a
+          href="/certificates"
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:scale-105 bg-light-purple dark:bg-dracula-purple text-light-background dark:text-dracula-background"
+        >
+          Ver Certificados
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
     </SectionContainer>
     <SectionContainer id="sobre-mi" class="mt-5 section-animate">
-      <h2 class="flex items-center gap-2 font-bold text-2xl text-dracula-purple mb-5">
+      <h2 class="flex items-center gap-2 font-bold text-2xl mb-5 text-dracula-purple dark:text-dracula-purple">
         <UserIcon />
         Sobre mí
       </h2>
       <AboutMe />
+    </SectionContainer>
+    <SectionContainer id="contacto" class="mt-5 section-animate">
+      <h2 class="flex items-center gap-2 font-bold text-2xl mb-7 text-dracula-purple dark:text-dracula-purple">
+        <MailIcon />
+        Contacto
+      </h2>
+      <div class="max-w-xl mx-auto">
+        <ContactForm />
+      </div>
     </SectionContainer>
   </main>
 </Layout>

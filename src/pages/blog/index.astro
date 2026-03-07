@@ -1,0 +1,61 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog"))
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<Layout>
+  <main class="container mx-auto px-4 py-8 mt-20">
+    <div class="max-w-2xl mx-auto section-animate">
+      <h1 class="text-4xl font-extrabold mb-8 text-dracula-purple dark:text-dracula-purple">
+        Blog
+      </h1>
+      
+      <div class="flex flex-col gap-6">
+        {
+          posts.map((post, index) => (
+            <article 
+              class="border rounded-xl p-6 hover:scale-[1.02] transition-transform duration-300 flex flex-col bg-dracula-comment/20 dark:bg-dracula-comment/20 border-dracula-purple/30 dark:border-dracula-purple/30" 
+              data-index={index}
+            >
+              {post.data.image && (
+                <img
+                  src={post.data.image}
+                  alt={post.data.title}
+                  class="w-full h-48 object-cover rounded-lg mb-4"
+                />
+              )}
+              <div class="flex flex-col flex-grow">
+                <h2 class="text-2xl font-bold mb-2 text-dracula-foreground dark:text-dracula-foreground">
+                  <a href={`/blog/${post.slug}`} class="hover:underline">
+                    {post.data.title}
+                  </a>
+                </h2>
+                <time class="text-sm mb-3 block text-dracula-orange dark:text-dracula-orange">
+                  {post.data.date.toLocaleDateString("es-ES", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </time>
+                <p class="mb-4 flex-grow text-dracula-foreground/70 dark:text-dracula-foreground/70">
+                  {post.data.description}
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  {post.data.tags.map((tag) => (
+                    <span class="px-2 py-1 text-xs rounded-full bg-dracula-background dark:bg-dracula-background text-dracula-purple dark:text-dracula-purple">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </main>
+</Layout>
