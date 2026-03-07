@@ -1,3 +1,36 @@
+---
+const currentPath = Astro.url.pathname;
+
+const links = [
+  {
+    title: "Inicio",
+    label: "inicio",
+    href: "/",
+  },
+  {
+    title: "Blog",
+    label: "blog",
+    href: "/blog",
+  },
+  {
+    title: "Proyectos",
+    label: "proyectos",
+    href: "/projects",
+  },
+  {
+    title: "Certificados",
+    label: "certificados",
+    href: "/certificates",
+  },
+  {
+    title: "Contáctame",
+    label: "contacto",
+    href: "mailto:juandavidgonzalezurrego@gmail.com",
+  },
+];
+
+---
+
 <footer class="bg-light-comment/20 dark:bg-dracula-comment/20 rounded-lg shadow py-4 footer-animate">
   <div class="w-full mx-auto max-w-screen-xl px-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
     <div class="text-sm sm:text-center text-light-foreground/70 dark:text-dracula-foreground/70">
@@ -5,21 +38,17 @@
     </div>
 
     <nav class="flex flex-wrap items-center justify-center md:justify-end gap-x-6 gap-y-3">
-      <a href="/" class="text-sm font-medium text-light-foreground/70 dark:text-dracula-foreground/70 hover:text-dracula-cyan dark:hover:text-dracula-cyan hover:underline transition-colors">
-        Inicio
-      </a>
-      <a href="/blog" class="text-sm font-medium text-light-foreground/70 dark:text-dracula-foreground/70 hover:text-dracula-cyan dark:hover:text-dracula-cyan hover:underline transition-colors">
-        Blog
-      </a>
-      <a href="/projects" class="text-sm font-medium text-light-foreground/70 dark:text-dracula-foreground/70 hover:text-dracula-cyan dark:hover:text-dracula-cyan hover:underline transition-colors">
-        Proyectos
-      </a>
-      <a href="/certificates" class="text-sm font-medium text-light-foreground/70 dark:text-dracula-foreground/70 hover:text-dracula-cyan dark:hover:text-dracula-cyan hover:underline transition-colors">
-        Certificados
-      </a>
-      <a href="mailto:juandavidgonzalezurrego@gmail.com" class="text-sm font-medium text-light-foreground/70 dark:text-dracula-foreground/70 hover:text-dracula-cyan dark:hover:text-dracula-cyan hover:underline transition-colors">
-        Contáctame
-      </a>
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            aria-label={link.label}
+            class={link.href !== currentPath ? `text-sm font-medium text-light-foreground/70 dark:text-dracula-foreground/70 hover:text-dracula-cyan dark:hover:text-dracula-cyan hover:underline transition-colors` : `text-sm font-medium text-dracula-cyan dark:text-dracula-cyan hover:underline transition-colors`}
+          >
+            {link.title}
+          </a>
+        ))
+      }
     </nav>
   </div>
 </footer>

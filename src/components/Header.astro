@@ -2,6 +2,8 @@
 import CloseIcon from "./icons/CloseIcon.astro";
 import OpenIcon from "./icons/OpenIcon.astro";
 
+const currentPath = Astro.url.pathname;
+
 const links = [
   {
     title: "Inicio",
@@ -36,7 +38,9 @@ const links = [
           <a
             href={link.href}
             aria-label={link.label}
-            class="px-2 text-sm font-bold hover:scale-110 transition-all duration-200 ease-in-out text-light-foreground/80 dark:text-dracula-foreground/80 hover:text-light-purple dark:hover:text-dracula-purple"
+
+            class={ link.href === currentPath ? 
+              `px-2 text-sm font-bold hover:scale-110 transition-all duration-200 ease-in-out text-light-foreground/80 dark:text-dracula-foreground/80 hover:text-light-purple dark:hover:text-dracula-purple text-light-purple dark:text-dracula-purple` : `px-2 text-sm font-bold hover:scale-110 transition-all duration-200 ease-in-out text-light-foreground/80 dark:text-dracula-foreground/80 hover:text-light-purple dark:hover:text-dracula-purple`}
           >
             {link.title}
           </a>
@@ -72,7 +76,8 @@ const links = [
         <a
           href={link.href}
           aria-label={link.label}
-          class="text-2xl font-bold hover:scale-110 transition-all duration-200 text-light-foreground dark:text-dracula-foreground"
+          class={ link.href === currentPath ? 
+              "text-2xl font-bold hover:scale-110 transition-all duration-200 text-light-purple dark:text-dracula-purple" : "text-2xl font-bold hover:scale-110 transition-all duration-200 text-light-foreground dark:text-dracula-foreground"}
         >
           {link.title}
         </a>
