@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import LinkToExternalIcon from "./icons/LinkToExternalIcon.astro";
 
 const dataCertificates = await getCollection("certificates");
 const certificates = dataCertificates
@@ -15,16 +16,17 @@ const certificates = dataCertificates
       certificates.map((cert, index) => (
         <li class={`cert-item mb-10 ms-4 ${index > 2 ? "hidden" : ""}`}>
           <div class="absolute w-3 h-3 bg-dracula-purple rounded-full mt-1.5 -start-1.5 border border-dracula-background" />
-          <time class="mb-1 text-sm font-normal leading-none text-dracula-orange ">
+          <time class="mb-1 text-sm font-normal leading-none text-light-orange dark:text-dracula-orange">
             {cert.data.date} - {cert.data.entity}
           </time>
-          <h3 class="text-lg font-semibold text-white">{cert.data.title}</h3>
-          <p class="mb-4 text-base font-normal text-gray-500">{cert.data.description}</p>
+          <h3 class="text-lg font-semibold text-light-foreground dark:text-dracula-foreground">{cert.data.title}</h3>
+          <p class="mb-4 text-base font-normal text-light-foreground/70 dark:text-dracula-foreground/70">{cert.data.description}</p>
           <a
             href={cert.data.link}
             target="_blank"
-            class="inline-flex items-center px-4 py-2 text-sm rounded-md bg-dracula-comment/20 border border-dracula-purple text-dracula-foreground hover:bg-dracula-comment/30 hover:text-dracula-purple hover:border-dracula-purple hover:scale-105 transition-all duration-300"
+            class="inline-flex items-center gap-2 px-4 py-2 text-sm rounded-lg border hover:scale-105 transition-transform whitespace-nowrap bg-light-comment/20 dark:bg-dracula-comment/20 border-light-purple dark:border-dracula-purple text-light-foreground dark:text-dracula-foreground"
           >
+            <LinkToExternalIcon />
             Ver Certificado
           </a>
         </li>
