@@ -3,7 +3,9 @@ import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import LinkToExternalIcon from "../components/icons/LinkToExternalIcon.astro";
 
-const certificates = await getCollection("certificates");
+const dataCertifictes = await getCollection("certificates");
+const certificates = dataCertifictes
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
 ---
 
 <Layout>
