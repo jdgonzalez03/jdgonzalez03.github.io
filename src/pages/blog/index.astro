@@ -10,7 +10,7 @@ const posts = (await getCollection("blog"))
 <Layout>
   <main class="container mx-auto px-4 py-8 mt-20">
     <div class="max-w-2xl mx-auto section-animate">
-      <h1 class="text-4xl font-extrabold mb-8 text-dracula-purple dark:text-dracula-purple">
+      <h1 class="text-4xl font-extrabold mb-8 text-light-purple dark:text-dracula-purple">
         Blog
       </h1>
       
@@ -18,7 +18,7 @@ const posts = (await getCollection("blog"))
         {
           posts.map((post, index) => (
             <article 
-              class="border rounded-xl p-6 hover:scale-[1.02] transition-transform duration-300 flex flex-col bg-dracula-comment/20 dark:bg-dracula-comment/20 border-dracula-purple/30 dark:border-dracula-purple/30" 
+              class="border rounded-xl p-6 hover:scale-[1.02] transition-transform duration-300 flex flex-col bg-light-comment/20 dark:bg-dracula-comment/20 border-light-purple/30 dark:border-dracula-purple/30" 
               data-index={index}
             >
               {post.data.image && (
@@ -29,24 +29,24 @@ const posts = (await getCollection("blog"))
                 />
               )}
               <div class="flex flex-col flex-grow">
-                <h2 class="text-2xl font-bold mb-2 text-dracula-foreground dark:text-dracula-foreground">
+                <h2 class="text-2xl font-bold mb-2 text-light-foreground dark:text-dracula-foreground">
                   <a href={`/blog/${post.slug}`} class="hover:underline">
                     {post.data.title}
                   </a>
                 </h2>
-                <time class="text-sm mb-3 block text-dracula-orange dark:text-dracula-orange">
+                <time class="text-sm mb-3 block text-light-orange dark:text-dracula-orange">
                   {post.data.date.toLocaleDateString("es-ES", {
                     year: "numeric",
                     month: "long",
                     day: "numeric",
                   })}
                 </time>
-                <p class="mb-4 flex-grow text-dracula-foreground/70 dark:text-dracula-foreground/70">
+                <p class="mb-4 flex-grow text-light-foreground/70 dark:text-dracula-foreground/70">
                   {post.data.description}
                 </p>
                 <div class="flex flex-wrap gap-2">
                   {post.data.tags.map((tag) => (
-                    <span class="px-2 py-1 text-xs rounded-full bg-dracula-background dark:bg-dracula-background text-dracula-purple dark:text-dracula-purple">
+                    <span class="px-2 py-1 text-xs rounded-full bg-light-background dark:bg-dracula-background text-light-purple dark:text-dracula-purple">
                       {tag}
                     </span>
                   ))}
