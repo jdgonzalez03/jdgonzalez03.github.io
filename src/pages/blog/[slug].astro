@@ -52,7 +52,7 @@ const { Content } = await post.render();
             <img
               src={post.data.image}
               alt={post.data.title}
-              class="w-full h-64 object-cover rounded-xl"
+              class="w-full h-full object-cover rounded-xl"
             />
           )}
         </header>
@@ -109,6 +109,16 @@ const { Content } = await post.render();
   .prose ol {
     margin-left: 1.5em;
     margin-bottom: 1em;
+    list-style-position: outside;
+    padding-left: 1em;
+  }
+
+  .prose ul {
+    list-style-type: disc;
+  }
+
+  .prose ol {
+    list-style-type: decimal;
   }
 
   .prose li {
