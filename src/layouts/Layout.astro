@@ -97,6 +97,52 @@ import ThemeToggle from "../components/ThemeToggle.astro";
 						gsap.set(".footer-animate", { clearProps: "all" });
 					}
 				});
+
+				// Header auto-hide functionality (iOS style)
+				let lastScrollY = window.scrollY;
+				let ticking = false;
+
+				const updateHeaderState = () => {
+					const header = document.getElementById("main-header") as HTMLElement;
+					const currentScrollY = window.scrollY;
+					
+					if (!header) return;
+
+					// Show header when scrolling up or at top
+					if (currentScrollY <= 0 || currentScrollY < lastScrollY) {
+						gsap.to(header, {
+							y: 0,
+							duration: 0.3,
+							ease: "power2.out",
+							onComplete: () => {
+								header.style.transform = "translateY(0)";
+							}
+						});
+					}
+					// Hide header when scrolling down
+					else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+						gsap.to(header, {
+							y: -100,
+							duration: 0.1,
+							ease: "power2.in",
+							onComplete: () => {
+								header.style.transform = "translateY(-100%)";
+							}
+						});
+					}
+
+					lastScrollY = currentScrollY;
+					ticking = false;
+				};
+
+				const requestTick = () => {
+					if (!ticking) {
+						requestAnimationFrame(updateHeaderState);
+						ticking = true;
+					}
+				};
+
+				window.addEventListener("scroll", requestTick, { passive: true });
 			});
 		</script>
 	</body>
