@@ -28,11 +28,11 @@ import ThemeToggle from "../components/ThemeToggle.astro";
 			})();
 		</script>
 	</head>
-	<body class="min-h-full antialiased pt-4 transition-colors duration-300">
+	<body class="min-h-full antialiased pt-4 transition-colors duration-300 flex flex-col">
 		<Header>
 			<ThemeToggle slot="theme-toggle" />
 		</Header>
-		<main class="container mx-auto px-4 py-8">
+		<main class="container flex-1 mx-auto px-4 py-8">
 			<slot />
 		</main>
 		<Footer />
