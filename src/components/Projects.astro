@@ -1,21 +1,32 @@
 ---
+import { getCollection } from "astro:content";
+
 import DemoIcon from "./icons/Demo.astro";
 import GithubIcon from "./icons/Github.astro";
-const projects = [
-  {
-    title: "Próximamente",
-    description:
-      "Esta sección de proyectos está en desarrollo. Pronto compartiré algunos de mis trabajos realizados con Wagtail, Django y Vue JS.",
-    image: "/cat-type.gif",
-    linkRepo: "#",
-    linkDemo: "#",
-    technologies: ["Wagtail", "Django", "Vue JS"],
-  },
-];
+
+const projects = await getCollection("projects");
+
+const placeholderProject = {
+  title: "Próximamente",
+  description: "Esta sección de proyectos está en desarrollo. Pronto compartiré algunos de mis trabajos realizados con Wagtail, Django y Vue JS.",
+  image: "/cat-type.gif",
+  technologies: ["Wagtail", "Django", "Vue JS"],
+  featured: false,
+  links: {
+    repo: "#",
+    demo: "#"
+  }
+};
+
+const allProjects = projects.map(p => p.data);
+
+if (allProjects.length < 3) {
+  allProjects.push(placeholderProject);
+}
 ---
 
 {
-  projects.map((project) => (
+  allProjects.map((project) => (
     <article class="mb-8 flex flex-col md:flex-row border rounded-xl overflow-hidden hover:scale-105 hover:shadow-lg transition-all duration-300 bg-light-background/50 dark:bg-dracula-background/50 border-light-purple/30 dark:border-dracula-purple/30">
       <div class="md:w-1/3 relative">
         <img
@@ -26,7 +37,7 @@ const projects = [
         />
       </div>
       <div class="md:w-2/3 p-6 flex flex-col justify-between">
-        <div>
+        <div class="mb-4">
           <h3 class="text-xl font-bold mb-3 text-light-foreground dark:text-dracula-foreground">
             {project.title}
           </h3>
@@ -37,11 +48,11 @@ const projects = [
               </span>
             ))}
           </div>
-          <p class="text-light-foreground/80 dark:text-dracula-foreground/80 mb-4">{project.description}</p>
+          <p class="text-light-foreground/80 dark:text-dracula-foreground/80 mb-4 line-clamp-3">{project.description}</p>
         </div>
         <div class="flex gap-4">
           <a
-            href={project.linkRepo}
+            href={project.links?.repo}
             target="_blank"
             rel="noopener noreferrer"
             class="inline-flex items-center px-4 py-2 text-sm rounded-md bg-light-comment/20 dark:bg-dracula-comment/20 border border-light-purple dark:border-dracula-purple text-light-foreground dark:text-dracula-foreground hover:bg-light-comment/30 dark:hover:bg-dracula-comment/30 hover:text-light-purple dark:hover:text-dracula-purple hover:border-light-purple dark:hover:border-dracula-purple hover:scale-105 transition-all duration-300"
@@ -50,7 +61,7 @@ const projects = [
             Código
           </a>
           <a
-            href={project.linkDemo}
+            href={project.links?.demo}
             target="_blank"
             rel="noopener noreferrer"
             class="inline-flex items-center px-4 py-2 bg-light-yellow/30 dark:bg-dracula-yellow/30 border border-light-yellow dark:border-dracula-yellow text-light-yellow dark:text-dracula-yellow rounded-lg hover:bg-light-yellow/40 dark:hover:bg-dracula-yellow/40 hover:scale-105 transition-colors duration-200"
