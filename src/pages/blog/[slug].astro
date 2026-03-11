@@ -19,7 +19,7 @@ const { Content } = await post.render();
     <div class="max-w-2xl mx-auto section-animate">
       <a
         href="/blog"
-        class="inline-flex items-center gap-2 mb-6 text-sm font-medium hover:underline text-dracula-purple dark:text-dracula-purple"
+        class="inline-flex items-center gap-2 mb-6 text-sm font-medium hover:underline text-light-purple dark:text-dracula-purple"
       >
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
@@ -29,11 +29,11 @@ const { Content } = await post.render();
 
       <article>
         <header class="mb-8">
-          <h1 class="text-4xl font-extrabold mb-4 text-dracula-foreground dark:text-dracula-foreground">
+          <h1 class="text-4xl font-extrabold mb-4 text-light-foreground dark:text-dracula-foreground">
             {post.data.title}
           </h1>
           <div class="flex flex-wrap items-center gap-4 mb-4">
-            <time class="text-sm text-dracula-orange dark:text-dracula-orange">
+            <time class="text-sm text-light-orange dark:text-dracula-orange">
               {post.data.date.toLocaleDateString("es-ES", {
                 year: "numeric",
                 month: "long",
@@ -42,7 +42,7 @@ const { Content } = await post.render();
             </time>
             <div class="flex flex-wrap gap-2">
               {post.data.tags.map((tag) => (
-                <span class="px-2 py-1 text-xs rounded-full bg-dracula-comment/20 dark:bg-dracula-comment/20 text-dracula-purple dark:text-dracula-purple">
+                <span class="px-2 py-1 text-xs rounded-full bg-light-comment/20 dark:bg-dracula-comment/20 text-light-purple dark:text-dracula-purple">
                   {tag}
                 </span>
               ))}
@@ -57,7 +57,7 @@ const { Content } = await post.render();
           )}
         </header>
 
-        <div class="prose prose-lg max-w-none text-dracula-foreground dark:text-dracula-foreground">
+        <div class="prose prose-lg max-w-none text-light-foreground dark:text-dracula-foreground">
           <Content />
         </div>
       </article>
